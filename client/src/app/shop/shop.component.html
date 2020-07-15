@@ -7,14 +7,19 @@
           class="custom-select mb-3"
           (change)="onSortSelected($event.target.value)"
         >
-          <option *ngFor="let sort of sortOptions" [value]="sort.value">
+          <option
+            *ngFor="let sort of sortOptions"
+            [value]="sort.value"
+            style="cursor: pointer;"
+          >
             {{ sort.name }}
           </option>
         </select>
 
         <h5 class="text-warning ml3">Brands</h5>
-        <ul class="list-group my-3">
+        <ul class="list-group my-3" style="cursor: pointer;">
           <li
+            style="cursor: pointer;"
             class="list-group-item"
             *ngFor="let brand of brands"
             [class.active]="brand.id === this.shopParams.brandId"
@@ -25,8 +30,9 @@
           </li>
         </ul>
         <h5 class="text-warning ml3">Types</h5>
-        <ul class="list-group my-3">
+        <ul class="list-group my-3" style="cursor: pointer;">
           <li
+            style="cursor: pointer;"
             class="list-group-item"
             *ngFor="let type of types"
             [class.active]="type.id === this.shopParams.typeId"
